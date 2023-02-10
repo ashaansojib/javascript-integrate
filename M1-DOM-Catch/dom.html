@@ -28,15 +28,20 @@
 <body>
     <main id="main">
         <div class="container" id="post-container">
-            <article class="post">
+            <article class="post" id="first">
+                <p id="update"></p>
+                <input id="field-input" type="text">
+                <button id="up-btn">update</button>
+            </article>
+            <article class="post" id="first">
                 <h2 class="blog-title">How To Work DOM In JavaScript?</h2>
                 <p class="blog">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo, maxime, soluta veritatis maiores numquam excepturi libero animi veniam impedit doloremque quisquam nemo fuga voluptas neque! Quidem necessitatibus beatae cumque expedita?</p>
                 <button id="read">Read More</button>
             </article>
-            <article class="post">
+            <article class="post" id="post-two">
                 <h2 class="blog-title">How To Work DOM In JavaScript?</h2>
                 <p class="blog">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo, maxime, soluta veritatis maiores numquam excepturi libero animi veniam impedit doloremque quisquam nemo fuga voluptas neque! Quidem necessitatibus beatae cumque expedita?</p>
-                <button id="read">Read More</button>
+                <button onclick="changeColor()" id="read">Read More</button>
             </article>
             <article class="post" id="post-three">
                 <h2 class="blog-title">How To Work DOM In JavaScript?</h2>
@@ -49,5 +54,6 @@
         
     </script>
     <script src="dom.js"></script>
+    <script src="events.js"></script>
 </body>
 </html>
