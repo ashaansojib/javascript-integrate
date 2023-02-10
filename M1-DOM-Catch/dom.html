@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Explain</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #main{
+            width: 900px;
+            margin: 0 auto;
+        }
+        #read{
+            padding: 10px 20px;
+            display: inline-block;
+            border: none;
+            background-color: orange;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main id="main">
+        <div class="container" id="post-container">
+            <article class="post">
+                <h2 class="blog-title">How To Work DOM In JavaScript?</h2>
+                <p class="blog">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo, maxime, soluta veritatis maiores numquam excepturi libero animi veniam impedit doloremque quisquam nemo fuga voluptas neque! Quidem necessitatibus beatae cumque expedita?</p>
+                <button id="read">Read More</button>
+            </article>
+            <article class="post">
+                <h2 class="blog-title">How To Work DOM In JavaScript?</h2>
+                <p class="blog">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo, maxime, soluta veritatis maiores numquam excepturi libero animi veniam impedit doloremque quisquam nemo fuga voluptas neque! Quidem necessitatibus beatae cumque expedita?</p>
+                <button id="read">Read More</button>
+            </article>
+            <article class="post" id="post-three">
+                <h2 class="blog-title">How To Work DOM In JavaScript?</h2>
+                <p class="blog">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo, maxime, soluta veritatis maiores numquam excepturi libero animi veniam impedit doloremque quisquam nemo fuga voluptas neque! Quidem necessitatibus beatae cumque expedita?</p>
+                <button onclick="document.getElementById('post-three').style.backgroundColor = 'yellow' " id="read">Read More</button>
+            </article>
+        </div>
+    </main>
+    <script>
+        
+    </script>
+    <script src="dom.js"></script>
+</body>
+</html>
