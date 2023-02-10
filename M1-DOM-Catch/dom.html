@@ -28,10 +28,18 @@
 <body>
     <main id="main">
         <div class="container" id="post-container">
+            <article class="post-com" id="show-comment">
+                <h2>Show your comment here!</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident at eum earum tempora eius. Dolore, perferendis provident? Porro sequi nesciunt quaerat nobis eaque necessitatibus. Voluptate ducimus error praesentium neque atque!</p>
+                <textarea name="" id="comment-input" cols="100" rows="8"></textarea>
+                <br>
+                <button id="postButton">Post Now</button>
+            </article>
             <article class="post" id="first">
                 <p id="update"></p>
                 <input id="field-input" type="text">
                 <button id="up-btn">update</button>
+                <button id="makeRed">ClickToRed</button>
             </article>
             <article class="post" id="first">
                 <h2 class="blog-title">How To Work DOM In JavaScript?</h2>
@@ -48,12 +56,20 @@
                 <p class="blog">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo, maxime, soluta veritatis maiores numquam excepturi libero animi veniam impedit doloremque quisquam nemo fuga voluptas neque! Quidem necessitatibus beatae cumque expedita?</p>
                 <button onclick="document.getElementById('post-three').style.backgroundColor = 'yellow' " id="read">Read More</button>
             </article>
+            <!-- more event for -->
+            <article class="post" id="post-two">
+                <h2 id="triggered" class="blog-title">Show input validation!!</h2>
+                <input id="text-field" type="text" placeholder="click to change color">
+                <input id="delete-confirm" type="text" placeholder="type delete">
+                <button id="delete-btn" disabled>Press</button>
+            </article>
         </div>
     </main>
     <script>
-        
+
     </script>
     <script src="dom.js"></script>
     <script src="events.js"></script>
+    <script src="more-events.js"></script>
 </body>
 </html>
