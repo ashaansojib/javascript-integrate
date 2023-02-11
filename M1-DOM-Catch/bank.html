@@ -15,17 +15,17 @@
                 <!-- deposit showing area -->
                 <div class="bg-green-400 p-2 text-white text-center">
                     <h2 class="text-2xl">Deposit</h2>
-                    <h1 id="show-deposit" class="font-semibold text-2xl">000 USD</h1>
+                    <h1 class="font-semibold text-2xl"><span id="show-deposit">0</span> TK</h1>
                 </div>
                 <!-- withdraw showing area -->
                 <div class="bg-cyan-500 p-2 text-white text-center">
                     <h2 class="text-2xl">Withdraw</h2>
-                    <h1 id="show-withdraw" class="font-semibold text-2xl">000 USD</h1>
+                    <h1 class="font-semibold text-2xl"><span id="show-withdraw">0</span> TK</h1>
                 </div>
                 <!-- Average Money Area -->
                 <div class="bg-blue-700 p-2 text-white text-center">
-                    <h2 class="text-2xl">Money</h2>
-                    <h1 class="font-semibold text-2xl">1200 USD</h1>
+                    <h2 class="text-2xl">Balance</h2>
+                    <h1 class="font-semibold text-2xl"><span id="average-money">10</span> TK</h1>
                 </div>
             </div>
         </section>
@@ -47,25 +47,57 @@
     <script>
         // deposit buton handelar
         document.getElementById("deposit-btn").addEventListener('click', function(){
-            // get input value
+            // get input deposit from the input field and convert it as number
             const depositInput = document.getElementById("deposit-input");
-            const getPriviousDepositInput = depositInput.value;
-            const newDeposit = depositInput.innerText;
-            // current deposit total
-            // add deposit value to showing area
+            const getNewBalance = depositInput.value;
+            const convertNewBalace = parseFloat(getNewBalance);
+
+            // show deposit balance and shows deposit balance convert to number
+            const previusBalance = document.getElementById("show-deposit");
+            const getPreviusBalance = previusBalance.innerText;
+            const convertCurBalance = parseFloat(getPreviusBalance);
+
+            // when push new value or amaunt that add to current value
             const depositArea = document.getElementById("show-deposit");
-            depositArea.innerText = getPriviousDepositInput;
+            const totalDeposit = convertNewBalace + convertCurBalance;
+            depositArea.innerText = totalDeposit;
             depositInput.value = '';
+            
+            // total balance section add deposit amount when deposit it update and change
+            const currentBalance = document.getElementById("average-money");
+            const getCurBalance = currentBalance.innerText;
+            const convertAverageBalance = parseFloat(getCurBalance);
+            // add new balance from deposit
+            const totalBalance = convertNewBalace + convertAverageBalance;
+            // show total current balance
+            currentBalance.innerText = totalBalance;
         })
+
         // withdraw button click handeler
         document.getElementById("withdraw-btn").addEventListener('click', function(){
-            // get input by value
+            // get new withdraw amaunt and convert it as number
             const withdrawInput = document.getElementById("withdraw-input");
-            const getPriviousWithdrawInput = withdrawInput.value;
-            // get the withdraw area and add there new withdraw value
-            const withdrawArea = document.getElementById("show-withdraw");
-            withdrawArea.innerText = getPriviousWithdrawInput;
+            const getWithdraw = withdrawInput.value;
+            const convertGetWithdraw = parseFloat(getWithdraw);
+
+            // get the withdraw current balance and update it to a number
+            const currentWithdraw = document.getElementById("show-withdraw");
+            const getCurWithdraw = currentWithdraw.innerText;
+            const convertCurrentWithdraw = parseFloat(getCurWithdraw);
+            // add current withdraw and new withdraw value or ammount
+            const totalWithdraw = convertGetWithdraw + convertCurrentWithdraw;
+            currentWithdraw.innerText = totalWithdraw;
+            // remove or clear input number
             withdrawInput.value = '';
+
+            // total balance section add deposit amount when deposit it update and change
+            const currentBalance = document.getElementById("average-money");
+            const getCurBalance = currentBalance.innerText;
+            const convertAverageBalance = parseFloat(getCurBalance);
+            // add new balance from deposit
+            const totalBalance = convertAverageBalance - convertGetWithdraw;
+            // show total current balance
+            currentBalance.innerText = totalBalance;
         })
     </script>
 </body>
