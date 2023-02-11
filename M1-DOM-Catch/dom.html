@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Explain</title>
+    <!-- tailwind css cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/css">
         *{
             margin: 0;
@@ -89,12 +91,21 @@
                     <li class="item">delegate - Sed, dolorem.</li>
                     <li class="item">delegate - Error, expedita!</li>
                 </ul>
-                <button id="delegated">Add Items</button>
+                <button class="p-2 bg-red-300 font-extrabold" id="delegated">Add Items</button>
             </article>
         </div>
+        <!-- login form -->
+        <section id="login-container">
+            <h2 class="font-semibold text-center text-2xl">validation Login Form Submission!!</h2>
+            <div class="" action="">
+                <input id="email-field" class="mb-2 p-2 block rounded-md w-3/4" type="text">
+                <input id="pass-field" class="p-2 block rounded-md w-3/4" type="password">
+                <button id="login" class="p-2 border-none bg-rose-300 text-white mt-2 text-2xl rounded-md">Login Now</button>
+            </div>
+        </section>
     </main>
     <script>
-
+        
     </script>
     <script src="dom.js"></script>
     <script src="events.js"></script>

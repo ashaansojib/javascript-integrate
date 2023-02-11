@@ -59,3 +59,18 @@ document.getElementById("delegated").addEventListener('click', function(){
     const delegateParent = document.getElementById("delegate-container");
     delegateParent.appendChild(li);
 })
+
+
+// -------------------------------------banking transaction ---------------------------
+document.getElementById("login").addEventListener('click', function(event){
+
+    // get the input email
+    const emailField = document.getElementById("email-field");
+    const getUser = emailField.value;
+    // get the input password
+    const userPass = document.getElementById("pass-field");
+    const getPass = userPass.value;
+    if(getUser == "sojib2022@gmail.com" && getPass == "sojib"){
+        window.location.href = "bank.html";
+    }
+})
