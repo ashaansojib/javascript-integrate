@@ -23,6 +23,13 @@
             cursor: pointer;
             margin-top: 10px;
         }
+        ul{
+            list-style: none;
+        }
+        ul li{
+            padding: 4px;
+            font-size: 23px;
+        }
     </style>
 </head>
 <body>
@@ -57,11 +64,32 @@
                 <button onclick="document.getElementById('post-three').style.backgroundColor = 'yellow' " id="read">Read More</button>
             </article>
             <!-- more event for -->
-            <article class="post" id="post-two">
+            <article class="post">
+                <!-- git input deletaion valid chaeck -->
                 <h2 id="triggered" class="blog-title">Show input validation!!</h2>
                 <input id="text-field" type="text" placeholder="click to change color">
                 <input id="delete-confirm" type="text" placeholder="type delete">
                 <button id="delete-btn" disabled>Press</button>
+            </article>
+            <article class="post" id="prop">
+                <!-- propagation story -->
+                <h2>If you chack propagration go console log and click to see!!</h2>
+                <ul id="list-container">
+                    <li>Lorem, ipsum.</li>
+                    <li id="second-item">Eum, sit!</li>
+                    <li>Odio, debitis.</li>
+                    <li>Sed, dolorem.</li>
+                    <li>Error, expedita!</li>
+                </ul>
+                <h2>Remove a item and add a item only clicked</h2>
+                <ul id="delegate-container">
+                    <li class="item">delegate - Lorem, ipsum.</li>
+                    <li class="item">delegate - Eum, sit!</li>
+                    <li class="item">delegate - Odio, debitis.</li>
+                    <li class="item">delegate - Sed, dolorem.</li>
+                    <li class="item">delegate - Error, expedita!</li>
+                </ul>
+                <button id="delegated">Add Items</button>
             </article>
         </div>
     </main>
