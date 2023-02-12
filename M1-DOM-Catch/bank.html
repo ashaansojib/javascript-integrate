@@ -51,7 +51,18 @@
             const depositInput = document.getElementById("deposit-input");
             const getNewBalance = depositInput.value;
             const convertNewBalace = parseFloat(getNewBalance);
-
+            // clear input filed
+            depositInput.value = '';
+            // if input a string
+            if(isNaN(convertNewBalace)){
+                alert("this is invalid Number");
+                return;
+            }
+            // if input nagative digit
+            if(convertNewBalace < 0){
+                alert("wrong");
+                return;
+            }
             // show deposit balance and shows deposit balance convert to number
             const previusBalance = document.getElementById("show-deposit");
             const getPreviusBalance = previusBalance.innerText;
@@ -61,7 +72,7 @@
             const depositArea = document.getElementById("show-deposit");
             const totalDeposit = convertNewBalace + convertCurBalance;
             depositArea.innerText = totalDeposit;
-            depositInput.value = '';
+            
             
             // total balance section add deposit amount when deposit it update and change
             const currentBalance = document.getElementById("average-money");
@@ -79,16 +90,27 @@
             const withdrawInput = document.getElementById("withdraw-input");
             const getWithdraw = withdrawInput.value;
             const convertGetWithdraw = parseFloat(getWithdraw);
-
+            // remove or clear input number
+            withdrawInput.value = '';
+            
+            // if you provide invaild info
+            if(isNaN(convertGetWithdraw)){
+                alert("dhur beda");
+                return;
+            }
+            if(convertGetWithdraw < 0){
+                alert("abal");
+                return;
+            }
             // get the withdraw current balance and update it to a number
             const currentWithdraw = document.getElementById("show-withdraw");
             const getCurWithdraw = currentWithdraw.innerText;
             const convertCurrentWithdraw = parseFloat(getCurWithdraw);
+
+            
             // add current withdraw and new withdraw value or ammount
             const totalWithdraw = convertGetWithdraw + convertCurrentWithdraw;
             currentWithdraw.innerText = totalWithdraw;
-            // remove or clear input number
-            withdrawInput.value = '';
 
             // total balance section add deposit amount when deposit it update and change
             const currentBalance = document.getElementById("average-money");
