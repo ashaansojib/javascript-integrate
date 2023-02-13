@@ -15,7 +15,7 @@
                 <!-- deposit showing area -->
                 <div class="bg-green-400 p-2 text-white text-center">
                     <h2 class="text-2xl">Deposit</h2>
-                    <h1 class="font-semibold text-2xl"><span id="show-deposit">0</span> TK</h1>
+                    <h1 class="font-semibold text-2xl"><span id="show-deposit">430</span> TK</h1>
                 </div>
                 <!-- withdraw showing area -->
                 <div class="bg-cyan-500 p-2 text-white text-center">
@@ -45,24 +45,55 @@
         </section>
     </main>
     <script>
+        function getInputValueById(inputFieldId){
+            const newCurrentInput = document.getElementById(inputFieldId);
+            const getNewInput = newCurrentInput.value;
+            const getNewInputValue = parseFloat(getNewInput);
+            newCurrentInput.value = '';
+            return getNewInputValue;
+        }
+        //showing deposit to the inner text
+        function getInnerTextById(balanceElement){
+            const getTheBalance = document.getElementById(balanceElement);
+            const getBalancetextValue = getTheBalance.innerText;
+            const getBalanceValue = parseFloat(getBalancetextValue);
+            return getBalanceValue;
+        }
+        // add two value into showing deposit
+        function setTotalElementById(balanceElement, getNewValue){
+            const totalText = document.getElementById(balanceElement);
+            totalText.innerText = getNewValue;
+        }
         document.getElementById("deposit-btn").addEventListener('click', function(){
-    // get the deposit value
-    const newDeposit = document.getElementById("deposit-input");
-    const depositValue = newDeposit.value;
-    const convertNewDeposit = parseFloat(depositValue);
-    // clear input field
-    newDeposit.value = '';
-    if(isNaN(convertNewDeposit)){
-        alert("type a positive number")
-        return;
-    }
-    if(convertNewDeposit < 0){
-        alert("this number is invalid")
-        return;
-    }
-    console.log(convertNewDeposit)
-    
-})
+
+            // get new value of this
+            const depositElement = getInputValueById("deposit-input");
+            // get balance value
+            const getDeposit = getInnerTextById("show-deposit");
+            // total deposit value
+            const totalDeposit = depositElement + getDeposit;
+            // showing deposit
+            setTotalElementById("show-deposit" ,totalDeposit);
+            // balancr total value
+            const balanceTotal = getInnerTextById("average-money");
+            const newBalanceTotal = balanceTotal + depositElement;
+            // set the new balance value
+            setTotalElementById("average-money", newBalanceTotal)
+        })
+        document.getElementById("withdraw-btn").addEventListener('click', function(){
+            const withdrawElement = getInputValueById("withdraw-input");
+
+            const getElementWithdraw = getInnerTextById("show-withdraw");
+
+            const totalWithdraw = withdrawElement + getElementWithdraw;
+
+            const setDepost = setTotalElementById("show-withdraw", totalWithdraw);
+
+            const balanceTotal = getInnerTextById("average-money");
+            const newTotalBalance = balanceTotal - withdrawElement;
+            setTotalElementById("average-money", newTotalBalance);
+
+        })
     </script>
 </body>
 </html>
